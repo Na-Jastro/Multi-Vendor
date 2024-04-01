@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Ardalis.EFCore.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,15 @@ namespace MultiVendor.Infrastructure.Storage
         {
             
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Library Ardalis.EFCore.Extensions
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(MultiVendorDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MultiVendorDbContext).Assembly);
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }

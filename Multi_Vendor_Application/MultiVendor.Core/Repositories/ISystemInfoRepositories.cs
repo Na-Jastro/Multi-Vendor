@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MultiVendor.Core.Repositories
 {
-    public interface ISystemInfo
+    public interface ISystemInfoRepositories
     {
         Task<IEnumerable<SystemInfo>> GetAllSystemInfoAsync();
         Task<SystemInfo> GetSystemInfoByIdAysnc(Guid id);
