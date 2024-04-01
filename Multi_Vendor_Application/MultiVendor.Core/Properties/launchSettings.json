@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MultiVendor.Core": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
